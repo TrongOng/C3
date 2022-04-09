@@ -2,11 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { StyleSheet, Text, Picker, View, TextInput, Button } from 'react-native';
 
+
 export default function Survey() {
     const [selectedValue, setSelectedValue] = useState({gender: '', status: '', description: '', readBible: '', newClient: '', ministry: ''});
     const [text, onChangeText] = React.useState({firstName: '', lastName: '', email: ''});
     const [number, onChangeNumber] = React.useState({phone: '', age: ''});
 
+    function submit() {
+        console.log("submit 1234");
+        // Add a new document in collection "cities"
+    }
 
     
     {/*const UselessTextInput = () => {
@@ -129,7 +134,8 @@ export default function Survey() {
         </View>
         <Button
             title="Submit"
-            onPress={() => Alert.alert('Simple Button pressed')}/>
+            onPress={submit}
+        />
     </View>
   );
 }
@@ -163,4 +169,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
-
