@@ -19,24 +19,17 @@ export default function Survey() {
                 <View style={styles.heroBG}>
                     <Text style={styles.text}>A way to get closer to the Church..</Text>
                     <View style={styles.loginGrid}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={6}>
-                            <Button
-                                title="Sing Up"
-                                onPress={() => Alert.alert('Sign  Up Form')}
-                                style={styles.signupButton}
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Button
-                                title="Log In"
-                                onPress={() => Alert.alert('Login Form')}
-                                style={styles.signupButton}
-                            />
-                        </Grid>
-                    </Grid>
                         
-                        
+                        <Button
+                            title="Sign Up"
+                            onPress={() => Alert.alert('Sign  Up Form')}
+                            style={styles.signupButton}
+                        />
+                        <Button
+                            title="Log In"
+                            onPress={() => Alert.alert('Login Form')}
+                            style={styles.signupButton}
+                        />
                     </View>
                 </View>
             </ImageBackground>
@@ -62,11 +55,15 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     signupButton: {
-        maxWidth: '10%'
+        maxWidth: '10%',
+        margin: '20px',
+        padding: '20px'
     },
     loginGrid: {
         maxWidth: '40%',
-        marginLeft: '30%'
+        marginLeft: '30%',
+        display: 'flex'
+        
     }
 });
 
