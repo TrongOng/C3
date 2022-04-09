@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Header() {
   return (
     <View style={styles.container}>
-      <Text>I am Header...</Text>
+      <Text></Text>
     </View>
   );
 }

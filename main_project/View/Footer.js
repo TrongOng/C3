@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Footer() {
   return (
     <View style={styles.container}>
-      <Text>I am footer...</Text>
+      <Text></Text>
     </View>
   );
 }

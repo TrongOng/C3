@@ -39,10 +39,17 @@ export default function Survey() {
                         style={styles.input}
                         onChangeText={onChangeNumber}
                         value={number}
-                        placeholder="(1800)-Phone Number"
+                        placeholder="1234567890"
                         keyboardType="numeric"
                     />
-                <Text>Date of Birth</Text>
+                <Text>Age</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={onChangeNumber}
+                        value={number}
+                        placeholder="22"
+                        keyboardType="numeric"
+                    />
                 <Text>Gender</Text>
                     <Picker
                         selectedValue={selectedValue}
@@ -119,23 +126,24 @@ export default function Survey() {
                 </Picker>
         </View>
         <Button
-            title="Press me"
+            title="Submit"
             onPress={() => Alert.alert('Simple Button pressed')}/>
     </View>
   );
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 5,
+        flex: 10,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     }, 
     profile: {
-        flex: 2,
+        flex: 3,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        padding: 20,
     },
     name: {
         flexDirection: 'row',
@@ -147,7 +155,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     survey: {
-        flex: 2,
+        flex: 3,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
