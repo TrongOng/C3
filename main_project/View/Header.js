@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Button } from "@react-native-material/core";
 
 
 export default function Header() {
   return (
     <View style={styles.container}>
-      <Text>I am Header...</Text>
+      <Button title="Click Me" onPress={() => alert("🎉🎉🎉")}/>
     </View>
   );
 }
