@@ -1,18 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Survey from './View/Survey.js'
-import Header from './View/Header.js'
-import Footer from './View/Footer.js'
 
 
-
-export default function App() {
+export default function Header() {
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Header/>
-      <Survey/>
-      <Footer/>
+      <Text>I am Header...</Text>
     </View>
   );
 }
