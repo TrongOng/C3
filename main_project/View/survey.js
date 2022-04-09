@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { StyleSheet, Text, Picker, View, TextInput, Button } from 'react-native';
 
-
 export default function Survey() {
     const [selectedValue, setSelectedValue] = useState('');
     const [text, onChangeText] = React.useState('');
@@ -59,7 +58,6 @@ export default function Survey() {
                         <Picker.Item label="Select" value="select" />
                         <Picker.Item label="Male" value="male" />
                         <Picker.Item label="Female" value="female" />
-                        <Picker.Item label="Other" value="other-gender" />
                     </Picker>
 
         </View>
