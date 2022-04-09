@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import { StyleSheet, Text, Picker, View, TextInput, Button } from 'react-native';
 
 export default function Survey() {
-    const [selectedValue, setSelectedValue] = useState('');
-    const [text, onChangeText] = React.useState('');
-    const [number, onChangeNumber] = React.useState('');
+    const [selectedValue, setSelectedValue] = useState({gender: '', status: '', description: '', readBible: '', newClient: '', ministry: ''});
+    const [text, onChangeText] = React.useState({firstName: '', lastName: '', email: ''});
+    const [number, onChangeNumber] = React.useState({phone: '', age: ''});
 
+
+    
+    {/*const UselessTextInput = () => {
+    const [text, onChangeText] = React.useState({ firstName: '', lastName: '' });*/}
     return (
     <View style={styles.container}>
         <View style={styles.profile}>
@@ -16,13 +20,13 @@ export default function Survey() {
                         <TextInput
                             style={styles.input}
                             onChangeText={onChangeText}
-                            value={text}
+                            value={text.firstName}
                             placeholder="First Name"
                         />
                         <TextInput
                             style={styles.input}
                             onChangeText={onChangeText}
-                            value={text}
+                            value={text.lastName}
                             placeholder="Last Last"
                         />
                     </View>
@@ -30,14 +34,14 @@ export default function Survey() {
                     <TextInput
                         style={styles.input}
                         onChangeText={onChangeText}
-                        value={text}
+                        value={text.email}
                         placeholder="@email"
                     />
                 <Text>Phone</Text>
                     <TextInput
                         style={styles.input}
                         onChangeText={onChangeNumber}
-                        value={number}
+                        value={number.phone}
                         placeholder="1234567890"
                         keyboardType="numeric"
                     />
@@ -45,7 +49,7 @@ export default function Survey() {
                     <TextInput
                         style={styles.input}
                         onChangeText={onChangeNumber}
-                        value={number}
+                        value={number.age}
                         placeholder="22"
                         keyboardType="numeric"
                     />
@@ -53,7 +57,7 @@ export default function Survey() {
                     <Picker
                         selectedValue={selectedValue}
                         style={{ height: 25, width: 75 }}
-                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue.gender)}
                     >
                         <Picker.Item label="Select" value="select" />
                         <Picker.Item label="Male" value="male" />
@@ -62,11 +66,11 @@ export default function Survey() {
 
         </View>
         <View style={styles.survey}>
-            <text>Relationship Status</text>
+            <text style={{ fontSize: 25}}>Relationship Status</text>
                 <Picker
                     selectedValue={selectedValue}
                     style={{ height: 25, width: 75 }}
-                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue.status)}
                 >
                     <Picker.Item label="Select" value="select" />
                     <Picker.Item label="Single" value="single" />
@@ -74,11 +78,11 @@ export default function Survey() {
                     <Picker.Item label="Engage" value="engage" />
                     <Picker.Item label="Married" value="married" />
                 </Picker>
-            <text>What best describe you?</text>
+            <text style={{ fontSize: 25}}>What best describe you?</text>
                 <Picker
                     selectedValue={selectedValue}
                     style={{ height: 25, width: 75 }}
-                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue.description)}
                 >
                     <Picker.Item label="Select" value="select" />
                     <Picker.Item label="Non-Christian" value="non-christian" />
@@ -89,7 +93,7 @@ export default function Survey() {
                 <Picker
                     selectedValue={selectedValue}
                     style={{ height: 25, width: 75 }}
-                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue.readBible)}
                 >
                     <Picker.Item label="Select" value="select" />
                     <Picker.Item label="0" value="single" />
@@ -105,7 +109,7 @@ export default function Survey() {
                 <Picker
                     selectedValue={selectedValue}
                     style={{ height: 25, width: 75 }}
-                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue.newClient)}
                 >
                     <Picker.Item label="Select" value="select" />
                     <Picker.Item label="Yes" value="yes-church" />
@@ -115,7 +119,7 @@ export default function Survey() {
                 <Picker
                     selectedValue={selectedValue}
                     style={{ height: 25, width: 75 }}
-                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue.ministry)}
                 >
                     <Picker.Item label="Select" value="select" />
                     <Picker.Item label="Yes - in ministry" value="yes-ministry"/>
