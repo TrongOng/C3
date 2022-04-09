@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
-import { StyleSheet, Text, Picker, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, Picker, View, TextInput, Button, ImageBackground } from 'react-native';
+import { Box } from "@react-native-material/core";
 import Header from './Header.js'
 import Footer from './Footer.js'
 
@@ -9,42 +10,63 @@ export default function Survey() {
     const [selectedValue, setSelectedValue] = useState('');
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
+    const image = { uri: "https://images.pexels.com/photos/971515/pexels-photo-971515.jpeg" };
 
     return (
-    <View style={styles.container}>
-        <Header/>
-        <h1> Home Screen</h1>
-        <Footer/>
-    </View>
-  );
+        <View>
+            <Header />
+            <ImageBackground source={image} resizeMode="cover" style={styles.hero}>
+                <View style={styles.heroBG}>
+                    <Text style={styles.text}>A way to get closer to the Church..</Text>
+                    <View style={styles.loginGrid}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={6}>
+                            <Button
+                                title="Sing Up"
+                                onPress={() => Alert.alert('Sign  Up Form')}
+                                style={styles.signupButton}
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Button
+                                title="Log In"
+                                onPress={() => Alert.alert('Login Form')}
+                                style={styles.signupButton}
+                            />
+                        </Grid>
+                    </Grid>
+                        
+                        
+                    </View>
+                </View>
+            </ImageBackground>
+            <Footer />
+        </View>
+    );
 }
 const styles = StyleSheet.create({
-    container: {
-        flex: 5,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }, 
-    profile: {
-        flex: 2,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+
+    hero: {
+        height: '95vh'
     },
-    name: {
-        flexDirection: 'row',
+    text: {
+        color: "white",
+        fontSize: 42,
+        lineHeight: 84,
+        fontWeight: "bold",
+        textAlign: "center",
+        paddingTop: "20%"
     },
-    input: {
-        height: 30,
-        margin: 8,
-        borderWidth: 1,
-        padding: 10,
+    heroBG: {
+        backgroundColor: "#000000c0",
+        height: '100%',
     },
-    survey: {
-        flex: 2,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+    signupButton: {
+        maxWidth: '10%'
     },
+    loginGrid: {
+        maxWidth: '40%',
+        marginLeft: '30%'
+    }
 });
 

@@ -1,20 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { Button } from "@react-native-material/core";
+import { AppBar, HStack, IconButton } from "@react-native-material/core";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 
 export default function Header() {
   return (
-    <View style={styles.container}>
-      <Button title="Click Me" onPress={() => alert("🎉🎉🎉")}/>
+    <View>
+    <AppBar
+      style={styles.container}
+      title="Old North ✝️"
+      subtitle="Christ Center Church"
+      centerTitle={true}
+      color="black"
+      leading={props => (
+        <IconButton icon={props => <Icon name="menu" {...props} />} {...props} />
+      )}
+      trailing={props => (
+        <IconButton
+          icon={props => <Icon name="dots-vertical" {...props} />}
+          {...props}
+        />
+      )}
+    />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: '50px',
+  AppBar: {
     width: '100vh',
-    backgroundColor: 'black'
-  },
+    backgroundColor: 'black',
+    
+  }
 });
