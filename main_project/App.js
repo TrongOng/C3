@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import Survey from './View/Survey.js'
 import Header from './View/Header.js'
 import Footer from './View/Footer.js'
+import Result from './View/Result.js'
+import ContactInfo from './View/ContactInfo.js'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -33,6 +35,8 @@ const analytics = getAnalytics(app);
       <StatusBar style="auto" />
       <Header/>
       <Survey/>
+      <Result/>
+      <ContactInfo/>
       <Footer/>
     </View>
   );
