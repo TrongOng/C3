@@ -12,9 +12,8 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: '50px',
+    width: '100vh',
+    backgroundColor: 'black'
   },
 });
