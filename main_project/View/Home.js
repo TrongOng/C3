@@ -4,9 +4,9 @@ import { StyleSheet, Text, Picker, View, TextInput, Button, ImageBackground } fr
 import { Box } from "@react-native-material/core";
 import Header from './Header.js'
 import Footer from './Footer.js'
+import Survey from './Survey.js'
 
-
-export default function Survey() {
+export default function Home() {
     const [selectedValue, setSelectedValue] = useState('');
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
@@ -26,12 +26,14 @@ export default function Survey() {
                         />
                         <Button
                             title="Log In"
+                            
                             style={styles.signupButton}
                         />
                     </View>
                 </View>
             </ImageBackground>
             <Footer />
+            <Survey/>
         </View>
     );
 }
