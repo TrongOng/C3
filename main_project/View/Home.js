@@ -22,12 +22,10 @@ export default function Survey() {
                         
                         <Button
                             title="Sign Up"
-                            onPress={() => Alert.alert('Sign  Up Form')}
                             style={styles.signupButton}
                         />
                         <Button
                             title="Log In"
-                            onPress={() => Alert.alert('Login Form')}
                             style={styles.signupButton}
                         />
                     </View>
